@@ -30,8 +30,11 @@
                     
                     echo "
                     <div class='event-card {$status_class}'>
+                        <div class='event-image' style='height: 200px; overflow: hidden; border-radius: 8px 8px 0 0;'>
+                            <img src='{$event['image_url']}' alt='{$event['event_name']}' style='width: 100%; height: 100%; object-fit: cover;'>
+                        </div>
                         <h3>{$event['event_name']}</h3>
-                        <p class='event-description'>{$event['event_description']}</p>
+                        <p class='event-description'>{$event['description']}</p>
                         <div class='event-details'>
                             <p><strong>Date:</strong> {$event['event_date']}</p>
                             <p><strong>Time:</strong> {$event['event_time']}</p>

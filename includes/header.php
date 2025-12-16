@@ -13,10 +13,10 @@ $username = $isLoggedIn ? $_SESSION['username'] : '';
             <?php if($isLoggedIn): ?>
                 <a href="dashboard.php">Dashboard</a>
                 <span>Welcome, <?php echo $username; ?></span>
-                <a href="../process/logout_process.php">Logout</a>
+                <a href="../process/logout_process.php" class="btn-nav">Logout</a>
             <?php else: ?>
-                <a href="login.php">Login</a>
-                <a href="register.php">Register</a>
+                <a href="login.php" class="btn-nav">Login</a>
+                <a href="register.php" class="btn-nav">Register</a>
             <?php endif; ?>
         </div>
     </nav>

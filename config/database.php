@@ -33,6 +33,12 @@ class Database {
             $password = $url['pass'];
 
             $dsn = "pgsql:host={$host};port={$port};dbname={$dbname};sslmode=require";
+            
+            // Force-add endpoint ID to DSN options
+            // This is the most reliable way for Neon DB with PDO
+            $endpointId = explode('.', $host)[0];
+            $dsn .= ";options=endpoint=" . $endpointId;
+
             $this->conn = new PDO($dsn, $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) {
