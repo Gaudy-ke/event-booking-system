@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Booking System</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
     <?php include '../includes/header.php'; ?>
@@ -24,7 +24,7 @@
                 $db = new Database();
                 $conn = $db->getConnection();
                 
-                $sql = "SELECT * FROM events WHERE event_date >= CURDATE() ORDER BY event_date LIMIT 3";
+                $sql = "SELECT * FROM events WHERE event_date >= CURRENT_DATE ORDER BY event_date LIMIT 3";
                 $stmt = $conn->prepare($sql);
                 $stmt->execute();
                 $events = $stmt->fetchAll();
